@@ -68,7 +68,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4569283611740104}
   - component: {fileID: 212611864878421042}
-  - component: {fileID: 95357417447158768}
   m_Layer: 0
   m_Name: Trunk
   m_TagString: Untagged
@@ -603,23 +602,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!95 &95357417447158768
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1350856804793792}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!95 &95447013256824290
 Animator:
   serializedVersion: 3
@@ -662,6 +644,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd05a2dbdbe50f6429197bb272445d77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _inputController:
+    leftKey: 0
+    upKey: 0
+    rightKey: 0
+    downKey: 0
+    actionKey: 0
+    runKey: 0
   walkSpeed: 3
   runSpeed: 5
 --- !u!135 &135682604237478062
