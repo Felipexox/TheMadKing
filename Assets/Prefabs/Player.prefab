@@ -116,8 +116,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4697985769080632}
-  - component: {fileID: 114444055633150436}
   - component: {fileID: 54607321486192646}
+  - component: {fileID: 114581094939863584}
   - component: {fileID: 135682604237478062}
   - component: {fileID: 136097832031588660}
   m_Layer: 0
@@ -567,7 +567,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!95 &95015357008994144
 Animator:
@@ -651,7 +651,7 @@ MonoBehaviour:
   _trunkUp: {fileID: 95015357008994144}
   _trunkDown: {fileID: 95107390235079010}
   _head: {fileID: 95447013256824290}
---- !u!114 &114444055633150436
+--- !u!114 &114581094939863584
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -659,9 +659,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1500469343528210}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c9168a6cfbfcd642830aec433d230c0, type: 3}
+  m_Script: {fileID: 11500000, guid: bd05a2dbdbe50f6429197bb272445d77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  walkSpeed: 0
+  runSpeed: 0
 --- !u!135 &135682604237478062
 SphereCollider:
   m_ObjectHideFlags: 1
