@@ -23,13 +23,15 @@ public class BasePlayer : MonoBehaviour {
     void Update()
     {
 
-        Move(_inputController.GetDirection(), _inputController.GetSpeed());
+        Move(_inputController.GetDirection(), _inputController.GetRun());
 
     }
 
 
-    void Move(Vector3 direction, float velocity)
+    void Move(Vector3 direction, bool isRunning)
     {
+        float velocity = (isRunning) ? runSpeed : walkSpeed;
+
         direction = direction.normalized * velocity;
         rigidBody.velocity = direction;
     }

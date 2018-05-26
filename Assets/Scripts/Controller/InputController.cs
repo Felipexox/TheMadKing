@@ -18,9 +18,6 @@ public class InputController {
     [SerializeField]
     private KeyCode runKey;
 
-    float walkVelocity;
-    float runVelocity;
-
     public KeyCode LeftKey
     {
         get
@@ -134,11 +131,11 @@ public class InputController {
         return false;
     }
 
-    public float GetSpeed()
+    public bool GetRun()
     {
         if (Input.GetKey(RunKey))
-            return runVelocity;
-        return walkVelocity;
+            return true;
+        return false;
     }
 
 }
