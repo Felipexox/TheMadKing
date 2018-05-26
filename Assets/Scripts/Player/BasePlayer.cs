@@ -41,7 +41,7 @@ public class BasePlayer : MonoBehaviour {
         BaseInteraction baseInteraction = other.GetComponent<BaseInteraction>();
         if(baseInteraction != null)
         {
-            if (Input.GetKey(KeyCode.Space))
+            if (_inputController.GetActionButton())
             {
                 Interact(baseInteraction);
             }
