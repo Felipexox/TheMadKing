@@ -2,32 +2,106 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class InputController {
 
-    KeyCode leftKey;
-    KeyCode upKey;
-    KeyCode rightKey;
-    KeyCode downKey;
-    KeyCode actionKey;
-    KeyCode runKey;
+    [SerializeField]
+    private KeyCode leftKey;
+    [SerializeField]
+    private KeyCode upKey;
+    [SerializeField]
+    private KeyCode rightKey;
+    [SerializeField]
+    private KeyCode downKey;
+    [SerializeField]
+    private KeyCode actionKey;
+    [SerializeField]
+    private KeyCode runKey;
 
     float walkVelocity;
     float runVelocity;
 
-    public InputController(KeyCode leftKey, KeyCode upKey, KeyCode rightKey, KeyCode downKey, KeyCode actionKey, KeyCode runKey, float walkVelocity, float runVelocity)
+    public KeyCode LeftKey
     {
-        this.leftKey = leftKey;
-        this.upKey = upKey;
-        this.rightKey = rightKey;
-        this.downKey = downKey;
-        this.actionKey = actionKey;
-        this.runKey = runKey;
-        this.walkVelocity = walkVelocity;
-        this.runVelocity = runVelocity;
+        get
+        {
+            return leftKey;
+        }
+
+        set
+        {
+            leftKey = value;
+        }
+    }
+
+    public KeyCode UpKey
+    {
+        get
+        {
+            return upKey;
+        }
+
+        set
+        {
+            upKey = value;
+        }
+    }
+
+    public KeyCode RightKey
+    {
+        get
+        {
+            return rightKey;
+        }
+
+        set
+        {
+            rightKey = value;
+        }
+    }
+
+    public KeyCode DownKey
+    {
+        get
+        {
+            return downKey;
+        }
+
+        set
+        {
+            downKey = value;
+        }
+    }
+
+    public KeyCode ActionKey
+    {
+        get
+        {
+            return actionKey;
+        }
+
+        set
+        {
+            actionKey = value;
+        }
+    }
+
+    public KeyCode RunKey
+    {
+        get
+        {
+            return runKey;
+        }
+
+        set
+        {
+            runKey = value;
+        }
     }
 
     public Vector3 GetDirection()
     {
+        Debug.Log(DownKey);
         Vector3 direction = Vector3.zero;
 
         direction.x = GetDirectionX();
@@ -37,32 +111,32 @@ public class InputController {
 
     public float GetDirectionX()
     {
-        if (Input.GetKey(leftKey))
+        if (Input.GetKey(LeftKey))
             return -1;
-        else if (Input.GetKey(rightKey))
+        else if (Input.GetKey(RightKey))
             return 1;
         return 0;
     }
 
     public float GetDirectionZ()
     {
-        if (Input.GetKey(upKey))
+        if (Input.GetKey(UpKey))
             return 1;
-        else if (Input.GetKey(downKey))
+        else if (Input.GetKey(DownKey))
             return -1;
         return 0;
     }
 
     public bool GetActionButton()
     {
-        if (Input.GetKey(actionKey))
+        if (Input.GetKey(ActionKey))
             return true;
         return false;
     }
 
     public float GetSpeed()
     {
-        if (Input.GetKey(runKey))
+        if (Input.GetKey(RunKey))
             return runVelocity;
         return walkVelocity;
     }

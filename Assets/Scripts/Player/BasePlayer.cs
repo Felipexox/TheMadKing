@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BasePlayer : MonoBehaviour {
 
+    [SerializeField]
     InputController _inputController;
-
     Rigidbody rigidBody;
 
     [SerializeField]
@@ -16,7 +16,6 @@ public class BasePlayer : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        _inputController = new InputController(KeyCode.A, KeyCode.W, KeyCode.D, KeyCode.S, KeyCode.Space, KeyCode.LeftShift, walkSpeed, runSpeed);
         rigidBody = GetComponent<Rigidbody>();
     }
 
