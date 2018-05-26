@@ -6,25 +6,31 @@ public class Player : MonoBehaviour {
 
     InputController _inputController;
 
-    Rigidbody2D rigidBody;
+    Rigidbody rigidBody;
+
+    [SerializeField]
+    float walkSpeed;
+    [SerializeField]
+    float runSpeed;
 
 	// Use this for initialization
 	void Start () {
-        _inputController = new InputController();
-        rigidBody = GetComponent<Rigidbody2D>();
+        _inputController = new InputController(KeyCode.A, KeyCode.W, KeyCode.D, KeyCode.S, KeyCode.Space, KeyCode.LeftShift, walkSpeed, runSpeed);
+        rigidBody = GetComponent<Rigidbody>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-        Move(_inputController.GetDirection());
+        Move(_inputController.GetDirection(), _inputController.GetSpeed());
 
 	}
 
 
-    void Move(Vector2 direction)
+    void Move(Vector3 direction, float velocity)
     {
-        rigidBody.MovePosition((Vector2)transform.position + direction);
+        direction = direction.normalized * velocity;
+        rigidBody.velocity = direction;
     }
 
 }
