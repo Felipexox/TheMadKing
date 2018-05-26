@@ -35,19 +35,5 @@ public class PlayerAnimationController : MonoBehaviour {
             _head.Play("Head_Idle");
         }
     }
-    void playAnimation(string animName)
-    {
-        if (_trunkUp.GetLayerIndex("Arm_" + animName) != -1)
-        {
-            _trunkUp.Play("Arm_" + animName);
-        }
-        if (_trunkDown.GetLayerIndex("Feet_" + animName) >= 0)
-        {
-           
-        }
-        if (_head.GetLayerIndex("Head_" + animName) != -1)
-        {
-            _head.Play("Head_" + animName);
-        }
-    }
+ 
 }
