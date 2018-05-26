@@ -123,8 +123,8 @@ GameObject:
   - component: {fileID: 25876353}
   - component: {fileID: 25876352}
   - component: {fileID: 25876351}
-  - component: {fileID: 25876354}
   - component: {fileID: 25876355}
+  - component: {fileID: 25876354}
   - component: {fileID: 25876350}
   m_Layer: 0
   m_Name: Player
@@ -207,7 +207,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 25876349}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c9168a6cfbfcd642830aec433d230c0, type: 3}
+  m_Script: {fileID: 11500000, guid: bd05a2dbdbe50f6429197bb272445d77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 3
