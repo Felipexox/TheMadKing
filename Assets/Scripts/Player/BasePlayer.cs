@@ -27,7 +27,7 @@ public class BasePlayer : MonoBehaviour {
         //rigidBody.MovePosition((Vector2)transform.position + direction);
     }
 
-    void OnTriggerStay(Collider other)
+    protected virtual void OnTriggerStay(Collider other)
     {
         BaseInteraction baseInteraction = other.GetComponent<BaseInteraction>();
         if(baseInteraction != null)
@@ -38,7 +38,7 @@ public class BasePlayer : MonoBehaviour {
             }
         }
     }
-    void Interact(BaseInteraction ObjInteract)
+    protected virtual void Interact(BaseInteraction ObjInteract)
     {
          ObjInteract.Interact();
     }
