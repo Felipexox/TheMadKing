@@ -98,7 +98,6 @@ public class InputController {
 
     public Vector3 GetDirection()
     {
-        Debug.Log(DownKey);
         Vector3 direction = Vector3.zero;
 
         direction.x = GetDirectionX();

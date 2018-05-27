@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BasePlayer : MonoBehaviour {
-
+    [SerializeField]
+    private PlayerAnimationController animController = new PlayerAnimationController();
     [SerializeField]
     InputController _inputController;
     Rigidbody rigidBody;
@@ -24,7 +25,13 @@ public class BasePlayer : MonoBehaviour {
     {
 
         Move(_inputController.GetDirection(), _inputController.GetRun());
-
+        if (!_inputController.GetDirection().Equals(Vector3.zero))
+        {
+            animController.PlayWalk();
+        }else
+        {
+            animController.StopWalk();
+        }
     }
 
 
@@ -37,7 +44,7 @@ public class BasePlayer : MonoBehaviour {
     }
 
 
-    void OnTriggerStay(Collider other)
+    protected void OnTriggerStay(Collider other)
     {
         BaseInteraction baseInteraction = other.GetComponent<BaseInteraction>();
         if(baseInteraction != null)
@@ -45,12 +52,34 @@ public class BasePlayer : MonoBehaviour {
             if (_inputController.GetActionButton())
             {
                 Interact(baseInteraction);
+                animController.PlayInteraction();
+            }else
+            {
+                animController.StopInteraction();
+                StopInteract(baseInteraction);
             }
+        }
+    }
+    protected void OnTriggerExit(Collider other)
+    {
+        BaseInteraction baseInteraction = other.GetComponent<BaseInteraction>();
+        if (baseInteraction != null)
+        {
+            StopInteract(baseInteraction);
+            animController.StopInteraction();
         }
     }
     void Interact(BaseInteraction ObjInteract)
     {
          ObjInteract.Interact();
     }
+    void StopInteract(BaseInteraction ObjInteract)
+    {
+        ObjInteract.StopInteract();
+    }
 
+    void TriggerInteraction(Collider other)
+    {
+
+    }
 }

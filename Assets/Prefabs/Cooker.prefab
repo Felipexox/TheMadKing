@@ -134,7 +134,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4187511467197694}
-  - component: {fileID: 114483057867292422}
   m_Layer: 0
   m_Name: BodyReference
   m_TagString: Untagged
@@ -324,7 +323,7 @@ Transform:
   m_GameObject: {fileID: 1358509138847110}
   m_LocalRotation: {x: 0.38268343, y: -0, z: -0, w: 0.92387956}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 4922774634608924}
   - {fileID: 4772272044236374}
@@ -458,7 +457,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1243427817322016}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.7, y: 0.34, z: 0.35}
+  m_LocalPosition: {x: 0.7602849, y: 1.02, z: 4.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4187511467197694}
@@ -637,20 +636,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114483057867292422
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1358509138847110}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d939e0004102074bb0dc9939a9a77e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _trunkUp: {fileID: 95705877344621480}
-  _trunkDown: {fileID: 95771824186437674}
-  _head: {fileID: 95546223511944102}
 --- !u!114 &114723207375543408
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -662,13 +647,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd05a2dbdbe50f6429197bb272445d77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animController:
+    _trunkUp: {fileID: 95705877344621480}
+    _trunkDown: {fileID: 95771824186437674}
+    _head: {fileID: 95546223511944102}
   _inputController:
-    leftKey: 0
-    upKey: 0
-    rightKey: 0
-    downKey: 0
-    actionKey: 0
-    runKey: 0
+    leftKey: 97
+    upKey: 119
+    rightKey: 100
+    downKey: 115
+    actionKey: 32
+    runKey: 304
   walkSpeed: 3
   runSpeed: 5
 --- !u!135 &135177496811914990
@@ -681,8 +670,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.6654604
-  m_Center: {x: 0, y: 0.17079806, z: 0.048036754}
+  m_Radius: 0.91
+  m_Center: {x: 0, y: 0.17079806, z: 0.2}
 --- !u!136 &136110201206534172
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -692,10 +681,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.42000002
+  m_Radius: 0.75
   m_Height: 1.1576123
   m_Direction: 1
-  m_Center: {x: -0.01, y: 0.16984582, z: 0.04}
+  m_Center: {x: -0.01, y: 0.16984582, z: 0.19}
 --- !u!212 &212285975924241678
 SpriteRenderer:
   m_ObjectHideFlags: 1

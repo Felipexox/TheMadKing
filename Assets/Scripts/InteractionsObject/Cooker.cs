@@ -6,6 +6,7 @@ public class Cooker : BaseInteraction {
 
     public override void Interact()
     {
+        base.Interact();
         Debug.Log("Interacted");
     }
     public override void OnTriggerEnter(Collider other)
