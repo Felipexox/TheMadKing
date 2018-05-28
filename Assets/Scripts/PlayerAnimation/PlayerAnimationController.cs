@@ -14,9 +14,20 @@ public class PlayerAnimationController{
     public void PlayWalk()
     {
         _trunkDown.Play("Feet_Walk");
+        bool isInteraction = _trunkUp.GetCurrentAnimatorStateInfo(0).IsName("Arm_Interaction");
+        if (!isInteraction)
+        {
+            _trunkUp.Play("Arm_Walk");
+
+        }
     }
     public void StopWalk()
     {
+        bool isInteraction = _trunkUp.GetCurrentAnimatorStateInfo(0).IsName("Arm_Interaction");
+        if (!isInteraction)
+        {
+            _trunkUp.Play("Arm_Idle");
+        }
         _trunkDown.Play("Feet_Idle");
     }
     public virtual void PlayInteraction()
